@@ -1,0 +1,37 @@
+Rename this file to .gitignore before committing.
+
+# Secrets & Credentials
+.env
+*.env.local
+*.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE & OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# Runtime / Generated Data
+chroma_db/
+logs/*.log
+data/carbon_db.sqlite
+
+# Streamlit
+.streamlit/secrets.toml

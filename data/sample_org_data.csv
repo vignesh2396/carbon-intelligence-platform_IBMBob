@@ -1,0 +1,15 @@
+activity,category,scope,quantity,unit,business_unit
+Electricity consumption - Head Office,Purchased Electricity,Scope 2,850000,kWh,Operations
+Electricity consumption - Manufacturing Plant,Purchased Electricity,Scope 2,2400000,kWh,Manufacturing
+Natural gas - Head Office heating,Stationary Combustion,Scope 1,120000,kWh,Operations
+Diesel - Backup generators,Stationary Combustion,Scope 1,15000,litre,Operations
+Diesel - Company fleet vehicles,Mobile Combustion,Scope 1,85000,litre,Logistics
+Petrol - Company fleet vehicles,Mobile Combustion,Scope 1,32000,litre,Logistics
+Air travel - Business flights (short haul),Business Travel,Scope 3,420000,pkm,All Departments
+Air travel - Business flights (long haul),Business Travel,Scope 3,1850000,pkm,All Departments
+Rail travel - Business trips,Business Travel,Scope 3,95000,pkm,All Departments
+Landfill waste - Manufacturing,Waste,Scope 3,180,tonne,Manufacturing
+Landfill waste - Office,Waste,Scope 3,12,tonne,Operations
+Recycled waste - Manufacturing,Waste,Scope 3,95,tonne,Manufacturing
+Office supplies procurement,Purchased Goods & Services,Scope 3,85000,USD,Operations
+IT equipment procurement,Purchased Goods & Services,Scope 3,320000,USD,IT

@@ -1,0 +1,181 @@
+{
+  "summary": {
+    "total": 34,
+    "passed": 34,
+    "failed": 0,
+    "errored": 0,
+    "pass_rate": 100.0
+  },
+  "results": [
+    {
+      "test": "Tool: emissions_total",
+      "status": "PASS",
+      "ms": 3
+    },
+    {
+      "test": "Tool: emissions_scope2_formula",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: emissions_scope1_diesel",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: hotspoTool: ranking",
+      "status": "PASS",
+      "ms": 2
+    },
+    {
+      "test": "Tool: hotspoTool: pcTool: sums_to_100",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: scenario_bau_grows",
+      "status": "PASS",
+      "ms": 4
+    },
+    {
+      "test": "Tool: scenario_intervention_less_than_bau",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: scenario_reduction_pcTool: positive",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: scenario_no_strategy_no_reduction",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Tool: feasibility_sorted_descending",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "Tool: feasibility_priority_labels",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "Tool: feasibility_within_budgeTool: flag",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "Validator: tc03_missing_quantity_column",
+      "status": "PASS",
+      "ms": 4
+    },
+    {
+      "test": "Validator: tc04_negative_quantity",
+      "status": "PASS",
+      "ms": 13
+    },
+    {
+      "test": "Validator: valid_sample_data_no_errors",
+      "status": "PASS",
+      "ms": 9
+    },
+    {
+      "test": "Validator: invalid_scope_value",
+      "status": "PASS",
+      "ms": 5
+    },
+    {
+      "test": "Validator: empty_rows_removed_with_warning",
+      "status": "PASS",
+      "ms": 16
+    },
+    {
+      "test": "Agent: tc01_carbon_accounting_agent",
+      "status": "PASS",
+      "ms": 1
+    },
+    {
+      "test": "Agent: tc01_emissions_analysis_agent",
+      "status": "PASS",
+      "ms": 2
+    },
+    {
+      "test": "Agent: tc02_single_scope2_only",
+      "status": "PASS",
+      "ms": 6
+    },
+    {
+      "test": "Agent: tc05_high_emission_flag",
+      "status": "PASS",
+      "ms": 3
+    },
+    {
+      "test": "Agent: tc01_cosAgent: feasibility_agent",
+      "status": "PASS",
+      "ms": 2
+    },
+    {
+      "test": "Agent: tc01_scenario_simulation_agent",
+      "status": "PASS",
+      "ms": 2
+    },
+    {
+      "test": "Agent: carbon_agenAgent: empty_raises",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "HITL: hitl_roadmap_blocked_before_approval",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "HITL: hitl_approve_sets_exporHITL: ready",
+      "status": "PASS",
+      "ms": 146
+    },
+    {
+      "test": "HITL: hitl_rejecHITL: keeps_blocked",
+      "status": "PASS",
+      "ms": 88
+    },
+    {
+      "test": "HITL: hitl_approved_by_recorded",
+      "status": "PASS",
+      "ms": 89
+    },
+    {
+      "test": "RAG: tc06_formaRAG: rag_empty_returns_message",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "RAG: tc06_formaRAG: rag_includes_source",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "RAG: tc07_low_confidence_labelled",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "RAG: rag_contexRAG: numbered_sources",
+      "status": "PASS",
+      "ms": 0
+    },
+    {
+      "test": "DB: db_iniDB: creates_all_tables",
+      "status": "PASS",
+      "ms": 53
+    },
+    {
+      "test": "DB: db_fk_enforcement",
+      "status": "PASS",
+      "ms": 53
+    }
+  ]
+}

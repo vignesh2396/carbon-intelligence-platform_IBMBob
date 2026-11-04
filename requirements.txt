@@ -1,0 +1,43 @@
+# ============================================================
+# Enterprise Carbon Intelligence & Net-Zero Planning Platform
+# requirements.txt  (Python 3.11+)
+# ============================================================
+
+# Core UI
+streamlit>=1.35.0
+
+# Agentic AI / LangChain
+langgraph>=0.1.0
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-google-genai>=1.0.0
+langchain-community>=0.2.0
+langchain-text-splitters>=0.0.1
+
+# LLM providers
+google-generativeai>=0.7.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Visualisation
+plotly>=5.22.0
+
+# PDF processing for RAG knowledge sources
+pypdf>=4.0.0
+
+# Presentation generation
+python-pptx>=1.0.0
+
+# Video generation
+moviepy>=1.0.3
+pillow>=10.0.0
+
+# Utility
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+typing-extensions>=4.9.0
+
+# NOTE: chromadb excluded — version conflict with pydantic v2.
+# RAG uses langchain_core.vectorstores.InMemoryVectorStore (no extra install needed).
