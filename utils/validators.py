@@ -46,7 +46,7 @@ class ValidationResult(BaseModel):
     is_valid: bool
     errors:   list[str]
     warnings: list[str]
-    clean_df: Optional[object] = None  # pandas DataFrame, excluded from serialization
+    clean_df: Optional[pd.DataFrame] = None
 
     class Config:
         arbitrary_types_allowed = True
