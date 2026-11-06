@@ -39,5 +39,9 @@ python-dotenv>=1.0.0
 pydantic>=2.0.0
 typing-extensions>=4.9.0
 
+# ── Guardrails & Performance Dashboard ───────────────────────────────────────
+# utils/guardrails.py  — uses Python stdlib only (re, time, hashlib, dataclasses)
+# utils/performance_dashboard.py — requires streamlit (already listed above)
+
 # NOTE: chromadb excluded — version conflict with pydantic v2.
 # RAG uses langchain_core.vectorstores.InMemoryVectorStore (no extra install needed).

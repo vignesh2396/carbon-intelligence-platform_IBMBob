@@ -38,6 +38,13 @@ import streamlit as st
 from utils.validators import validate_emissions_csv
 from agents.supervisor_agent import SupervisorAgent, AgentState
 from data.db_setup import init_db
+from utils.guardrails import (
+    run_all_input_guardrails,
+    run_all_output_guardrails,
+    record_token_usage,
+    get_operational_stats,
+)
+from utils.performance_dashboard import render_performance_dashboard
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Page Configuration
@@ -198,13 +205,14 @@ with st.sidebar:
 # ─────────────────────────────────────────────────────────────────────────────
 # Main Content — Tabbed Interface
 # ─────────────────────────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "📁 1. Data Input",
     "📊 2. Emissions Analysis",
     "💡 3. Strategies",
     "📈 4. Scenarios",
     "🗺️ 5. ESG Roadmap",
     "✅ 6. Review & Export",
+    "📊 Performance Dashboard",
 ])
 
 
@@ -278,6 +286,17 @@ with tab1:
                             status_text.text(f"⚙️ Running: {step_name} ({step_num}/{total})")
 
                         try:
+                            # ── Input Guardrails on org_name ──────────────
+                            org_guard = run_all_input_guardrails(
+                                st.session_state.get("org_name", ""),
+                                session_id=str(id(st.session_state)),
+                            )
+                            if org_guard.blocked:
+                                st.error(f"⚠️ Input blocked by guardrail: {', '.join(org_guard.violations)}")
+                                st.stop()
+
+                            import time as _time
+                            _start = _time.time()
                             supervisor = SupervisorAgent()
                             state = supervisor.run_full_pipeline(
                                 activity_df=validation.clean_df,
@@ -286,6 +305,13 @@ with tab1:
                                 target_year=st.session_state["target_year"],
                                 progress_callback=progress_callback,
                             )
+                            _latency = (_time.time() - _start) * 1000
+                            record_token_usage(
+                                len(str(validation.clean_df)) // 4,
+                                len(str(state.roadmap_result)) // 4,
+                                cost_usd=0.005,
+                            )
+                            st.session_state["session_metrics"] = {"avg_latency_ms": _latency}
                             st.session_state["agent_state"]  = state
                             st.session_state["pipeline_run"] = True
                             progress_bar.progress(1.0)
@@ -780,6 +806,9 @@ use in regulatory filings, ESG disclosures, or investor communications.
 # ─────────────────────────────────────────────────────────────────────────────
 # Footer
 # ─────────────────────────────────────────────────────────────────────────────
+with tab7:
+    render_performance_dashboard(st.session_state.get("session_metrics", {}))
+
 st.divider()
 st.markdown("""
 <div style="text-align: center; color: #6c757d; font-size: 0.85rem; padding: 1rem 0;">
